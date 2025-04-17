@@ -6,6 +6,7 @@ const router = Router()
 
 /*---------- Public Routes ----------*/
 // View Drinks
+router.get('/', drinksCtrl.index)
 
 // View Specific Drinks
 
