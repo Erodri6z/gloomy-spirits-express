@@ -8,11 +8,16 @@ import { v2 as cloudinary } from 'cloudinary'
 
 // View Drinks
 
-async function getDrinks(req, res) {
+async function index(req, res) {
   try {
-
+    Drink.find({})
+    .then(drinks => 
+      res.json(drinks)
+    )
   } catch {
-    
+    console.log(err)
+    res.redirect('/')
+    res.status(500)
   }
 }
 
@@ -31,4 +36,4 @@ async function getDrinks(req, res) {
 
 
 
-export {  }
+export { index }
