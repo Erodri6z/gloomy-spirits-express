@@ -4,8 +4,17 @@ import { v2 as cloudinary } from 'cloudinary'
 
 // todo: link cloudinary 
 // todo: link mongodb 
+// By Id
 
 // View Drinks
+
+async function getDrinks(req, res) {
+  try {
+
+  } catch {
+    
+  }
+}
 
 // Search Drink by Name 
 
