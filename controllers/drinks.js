@@ -14,8 +14,17 @@ async function index(req, res) {
     res.json(drinks)
   } catch {
     console.log(err)
-    res.redirect('/')
-    res.status(500)
+    res.status(500).json(err)
+  }
+}
+
+async function show(req, res) {
+  try{
+    const drink = await Drink.findById(req.params.id)
+    res.json(drink)
+  } catch {
+    console.log(err)
+    res.status(500).json(err)
   }
 }
 
@@ -34,4 +43,7 @@ async function index(req, res) {
 
 
 
-export { index }
+export { 
+  index,
+  show
+}
