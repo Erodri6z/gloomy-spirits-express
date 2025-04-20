@@ -10,10 +10,8 @@ import { v2 as cloudinary } from 'cloudinary'
 
 async function index(req, res) {
   try {
-    Drink.find({})
-    .then(drinks => 
-      res.json(drinks)
-    )
+    const drinks = await Drink.find({})
+    res.json(drinks)
   } catch {
     console.log(err)
     res.redirect('/')
