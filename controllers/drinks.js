@@ -31,7 +31,15 @@ async function show(req, res) {
 // Search Drink by Name 
 
 // Search by Vibe 
-
+async function findByVibe(req, res) {
+  try{
+    const drinks = await Drink.find({ vibe : req.params.vibe })
+    res.json(drinks)
+  } catch {
+    console.log(err)
+    res.status(500).json(err)
+  }
+}
 // Search by alc
 async function findByAlc(req, res) {
   try {
@@ -55,5 +63,6 @@ async function findByAlc(req, res) {
 export { 
   index,
   show,
+  findByVibe,
   findByAlc
 }
