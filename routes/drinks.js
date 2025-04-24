@@ -7,9 +7,9 @@ const router = Router()
 /*---------- Public Routes ----------*/
 // View Drinks
 router.get('/', drinksCtrl.index)
-router.get("/:id", drinksCtrl.show)
 
 // View Specific Drinks
+router.get("/:id", drinksCtrl.show)
 
 // Search By name 
 

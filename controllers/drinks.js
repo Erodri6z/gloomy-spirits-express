@@ -33,6 +33,15 @@ async function show(req, res) {
 // Search by Vibe 
 
 // Search by alc
+async function findByAlc(req, res) {
+  try {
+    const drinks = await Drink.find({ mainSpirit: req.params.mainSpirit })
+    res.json(drinks)
+  } catch {
+    console.log(err)
+    res.status(500).json(err)
+  }
+}
 
 // Create Drink
 
@@ -45,5 +54,6 @@ async function show(req, res) {
 
 export { 
   index,
-  show
+  show,
+  findByAlc
 }
