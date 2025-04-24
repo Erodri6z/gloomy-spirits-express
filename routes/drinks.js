@@ -16,7 +16,7 @@ router.get("/:id", drinksCtrl.show)
 // Search by alc
 router.get("/byAlcohol/:mainSpirit", drinksCtrl.findByAlc)
 // Search by vibe 
-
+router.get("/byVibe/:vibe", drinksCtrl.findByVibe)
 /*---------- Protected Routes ----------*/
 // router.use(decodeUserFromToken)
 // Create Drink
