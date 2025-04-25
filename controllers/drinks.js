@@ -1,4 +1,4 @@
-import { Drink } from '../models/drink'
+import { Drink } from '../models/drink.js'
 import { v2 as cloudinary } from 'cloudinary'
 
 
