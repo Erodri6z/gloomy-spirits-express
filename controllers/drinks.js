@@ -18,6 +18,7 @@ async function index(req, res) {
   }
 }
 
+// Show Specific drink
 async function show(req, res) {
   try{
     const drink = await Drink.findById(req.params.id)
@@ -29,7 +30,7 @@ async function show(req, res) {
 }
 
 // Search Drink by Name 
-
+// TODO: find a way to deal with typos 
 async function search(req, res) {
   try {
     const q = req.query.name || ""
