@@ -30,6 +30,18 @@ async function show(req, res) {
 
 // Search Drink by Name 
 
+async function search(req, res) {
+  try {
+    const q = req.query.name || ""
+    const drinks = await Drink.find({ name: { $regex: q, $options: "i" } })
+
+    res.json(drinks)
+  } catch {
+    console.log(err)
+    res.status(500).json(err)
+  }
+}
+
 // Search by Vibe 
 async function findByVibe(req, res) {
   try{
@@ -63,6 +75,7 @@ async function findByAlc(req, res) {
 export { 
   index,
   show,
+  search,
   findByVibe,
   findByAlc
 }
