@@ -12,7 +12,7 @@ router.get('/', drinksCtrl.index)
 router.get("/:id", drinksCtrl.show)
 
 // Search By name 
-
+router.get("/search", drinksCtrl.search)
 // Search by alc
 router.get("/byAlcohol/:mainSpirit", drinksCtrl.findByAlc)
 // Search by vibe 
