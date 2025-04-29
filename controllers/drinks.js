@@ -11,6 +11,7 @@ import { v2 as cloudinary } from 'cloudinary'
 async function index(req, res) {
   try {
     const drinks = await Drink.find({})
+    console.log(drinks)
     res.json(drinks)
   } catch {
     console.log(err)

@@ -2,73 +2,75 @@ import mongoose from 'mongoose'
 
 const Schema = mongoose.Schema
 
+const Mixed = Schema.Types.Mixed;
+
+
 const drinkSchema = new Schema({
-  name: {
+  Name: {
     type: String,
     required: true,
     trim: true,
   },
-  mainSpirit: {
+  MainSpirit: {
     type: String,
     required: true,
     trim: true
   },
-  image: {
+  Image: {
     type: String,
     default: null
   },
-  ingredients: {
+  Ingredients: {
     type: [String],
     required: true,
     validate: v => Array.isArray(v) && v.length > 0
   },
-  measurementsOz: {
-    type: [Number],
+  MeasurementsOz: {
+    type: [Mixed],
     required: true,
-    validate: v => Array.isArray(v) && v.length > 0
   },
-  bitters: {
+  Bitters: {
     type: [String],
     default: undefined
   },
-  garnish: {
+  Garnish: {
     type: [String],
     default: undefined
   },
-  color: {
+  Color: {
     type: String,
     required: true,
     trim: true
   },
-  recommendedGlasses: {
+  RecommendedGlasses: {
     type: [String],
     required: true,
     validate: v => Array.isArray(v) && v.length > 0
   },
-  notes: {
+  Notes: {
     type: [String],
     required: true,
     default: []
   },
-  method: {
+  Method: {
     type: [String],
     required: true,
     validate: v => Array.isArray(v) && v.length > 0
   },
-  credit: {
+  Credit: {
     type: String,
     default: null
   },
-  vibe: {
+  Vibe: {
     type: String,
     required: true,
     trim: true
   }
-}, {
-  timestamps: true
+},{
+  collection: "Drinks"
 })
 
-const Drink = mongoose.model('Drink', drinkSchema)
+const Drink = mongoose.model('Drinks', drinkSchema)
 
 export {
   Drink
