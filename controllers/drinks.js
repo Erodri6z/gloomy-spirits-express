@@ -47,7 +47,7 @@ async function search(req, res) {
 // Search by Vibe 
 async function findByVibe(req, res) {
   try{
-    const drinks = await Drink.find({ vibe : req.params.vibe })
+    const drinks = await Drink.find({ Vibe : req.params.vibe })
     res.json(drinks)
   } catch {
     console.log(err)
@@ -57,7 +57,7 @@ async function findByVibe(req, res) {
 // Search by alc
 async function findByAlc(req, res) {
   try {
-    const drinks = await Drink.find({ mainSpirit: req.params.mainSpirit })
+    const drinks = await Drink.find({ MainSpirit: req.params.mainSpirit })
     res.json(drinks)
   } catch {
     console.log(err)
