@@ -42,7 +42,7 @@ async function findByName(req, res) {
     console.log("Results:", drinks)
     res.json(drinks)
   } catch {
-    console.log('it failed boyo')
+    console.log(err)
     res.status(500).json(err)
   }
 }
@@ -69,6 +69,14 @@ async function findByAlc(req, res) {
 }
 
 // Create Drink
+
+async function create(req, res) {
+  try {
+    const 
+  } catch {
+
+  }
+}
 
 // Edit Drink
 
