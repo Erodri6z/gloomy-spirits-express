@@ -8,15 +8,15 @@ const router = Router()
 // View Drinks
 router.get('/', drinksCtrl.index)
 
-// View Specific Drinks
-router.get("/:id", drinksCtrl.show)
 
 // Search By name 
-router.get("/search", drinksCtrl.search)
+router.get("/search", drinksCtrl.findByName)
 // Search by alc
 router.get("/byAlcohol/:mainSpirit", drinksCtrl.findByAlc)
 // Search by vibe 
 router.get("/byVibe/:vibe", drinksCtrl.findByVibe)
+// View Specific Drinks
+router.get("/:id", drinksCtrl.show)
 /*---------- Protected Routes ----------*/
 // router.use(decodeUserFromToken)
 // Create Drink

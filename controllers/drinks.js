@@ -21,6 +21,7 @@ async function index(req, res) {
 
 // Show Specific drink
 async function show(req, res) {
+  console.log("aint no way this is whats being hit")
   try{
     const drink = await Drink.findById(req.params.id)
     res.json(drink)
@@ -32,14 +33,16 @@ async function show(req, res) {
 
 // Search Drink by Name 
 // TODO: find a way to deal with typos 
-async function search(req, res) {
+async function findByName(req, res) {
+  console.log("this is getting hit")
   try {
     const q = req.query.name || ""
-    const drinks = await Drink.find({ name: { $regex: q, $options: "i" } })
-
+    console.log("Looking for ", q)
+    const drinks = await Drink.find({ Name: { $regex: q, $options: "i" } })
+    console.log("Results:", drinks)
     res.json(drinks)
   } catch {
-    console.log(err)
+    console.log('it failed boyo')
     res.status(500).json(err)
   }
 }
@@ -77,7 +80,7 @@ async function findByAlc(req, res) {
 export { 
   index,
   show,
-  search,
+  findByName,
   findByVibe,
   findByAlc
 }
