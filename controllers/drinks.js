@@ -72,9 +72,12 @@ async function findByAlc(req, res) {
 
 async function create(req, res) {
   try {
-    const 
+    const newDrink = await Drink.create(req.body)
+    console.log(newDrink)
+    res.json(newDrink)
   } catch {
-
+    console.log(err)
+    res.status(500).json(err)
   }
 }
 
