@@ -99,6 +99,15 @@ async function edit(req, res) {
 }
 
 // Delete Drink
+async function deleteDrink(req, res) {
+  try{
+    const drink = await Drink.findByIdAndDelete(req.params.id)
+    res.json(drink)
+  } catch {
+    console.log(err)
+    res.status(500).json(err)
+  }
+}
 
 
 
