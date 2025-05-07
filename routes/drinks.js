@@ -23,6 +23,7 @@ router.get("/:id", drinksCtrl.show)
 router.post("/", drinksCtrl.create)
 
 // Edit Drink 
+router.put("/:id", drinksCtrl.edit)
 
 // Delete Drink
 
