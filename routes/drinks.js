@@ -26,6 +26,7 @@ router.post("/", drinksCtrl.create)
 router.put("/:id", drinksCtrl.edit)
 
 // Delete Drink
+router.delete('/:id', drinksCtrl.delete)
 
 
 export { router }

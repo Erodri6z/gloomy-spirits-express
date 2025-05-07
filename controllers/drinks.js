@@ -109,5 +109,6 @@ export {
   findByName,
   findByVibe,
   findByAlc,
-  create
+  create,
+  edit
 }
