@@ -3,8 +3,7 @@ import { v2 as cloudinary } from 'cloudinary'
 
 
 // todo: link cloudinary 
-// todo: link mongodb 
-// By Id
+// todo: link mongodb X
 
 // View Drinks
 
@@ -19,9 +18,9 @@ async function index(req, res) {
   }
 }
 
+// By Id
 // Show Specific drink
 async function show(req, res) {
-  console.log("aint no way this is whats being hit")
   try{
     const drink = await Drink.findById(req.params.id)
     res.json(drink)
@@ -34,7 +33,6 @@ async function show(req, res) {
 // Search Drink by Name 
 // TODO: find a way to deal with typos 
 async function findByName(req, res) {
-  console.log("this is getting hit")
   try {
     const q = req.query.name || ""
     console.log("Looking for ", q)
@@ -69,6 +67,7 @@ async function findByAlc(req, res) {
 }
 
 // Create Drink
+// TODO: Once we figure out the approach for the profiles, Make it so only admin accounts can edit"
 
 async function create(req, res) {
   try {
@@ -119,5 +118,6 @@ export {
   findByVibe,
   findByAlc,
   create,
-  edit
+  edit,
+  deleteDrink as delete
 }
