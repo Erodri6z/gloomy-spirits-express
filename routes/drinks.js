@@ -20,6 +20,7 @@ router.get("/:id", drinksCtrl.show)
 /*---------- Protected Routes ----------*/
 // router.use(decodeUserFromToken)
 // Create Drink
+router.post("/", drinksCtrl.create)
 
 // Edit Drink 
 
