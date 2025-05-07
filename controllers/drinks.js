@@ -82,6 +82,21 @@ async function create(req, res) {
 }
 
 // Edit Drink
+async function edit(req, res) {
+  try{
+    const drink = await Drink.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      {
+        new : true
+      }
+    )
+    res.json(drink)
+  } catch {
+    console.log(err)
+    res.status(500).json(err)
+  }
+}
 
 // Delete Drink
 
