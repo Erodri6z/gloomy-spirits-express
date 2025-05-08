@@ -67,7 +67,7 @@ async function findByAlc(req, res) {
 }
 
 // Create Drink
-// TODO: Once we figure out the approach for the profiles, Make it so only admin accounts can edit"
+// TODO: Once we figure out the approach for the profiles, Make it so only admin accounts can "
 
 async function create(req, res) {
   try {

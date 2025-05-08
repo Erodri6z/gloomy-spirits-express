@@ -40,7 +40,7 @@ async function login(req, res) {
       throw new Error('no CLOUDINARY_URL in back-end .env')
     }
 
-    const user = await User.findOne({ email: req.body.email })
+    const user = await User.findOne({ Email: req.body.email })
     if (!user) throw new Error('User not found')
 
     const isMatch = await user.comparePassword(req.body.password)
@@ -71,6 +71,8 @@ async function changePassword(req, res) {
     handleAuthError(err, res)
   }
 }
+
+
 
 /* --== Helper Functions ==-- */
 
