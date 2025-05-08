@@ -7,13 +7,13 @@ const Schema = mongoose.Schema
 const userSchema = new Schema({
   Email:    { type: String, required: true, lowercase: true, unique: true },
   Username: { type: String, required: true, unique: true },
-  PasswordHash: { type: String, required: true }
+  PasswordHash: { type: String, required: true },
 }, {
   timestamps: true,
   collection: "Users"
 })
 
-userSchema.set('toJSON', {
+userSchema.set('toJSON', {             
   transform: function (doc, ret) {
     delete ret.password
     return ret
